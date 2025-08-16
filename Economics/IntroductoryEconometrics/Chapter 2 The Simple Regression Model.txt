@@ -1,0 +1,83 @@
+2.1 Definition of the Simple Regression Model
+
+The average value of u does not depend on the value of x. We say that u is mean independent of x.
+
+When we combine mean independence with assumption that the average value of u in the population is zero, we obtain the zero conditional mean assumption. 
+
+2.2 Deriving the Ordinary Least Squares Estimates
+
+In the population, u is uncorrelated with x. Therefore, u has zero expected value and the covariance between x and u is zero.
+
+Given bar-y is the average of y and likewise bar-x, the estimated intercept is hat-beta-0 = bar-y minus hat-beta-1 times bar-x, and estimated slope is hat-beta-1 = fraction summation of (x-i minus bar-x) times (y-i minus bar-y) over summation of (x-i minus bar-x) squared, the estimates are called the ordinary least squares (OLS) estimates of beta-0 and beta-1.
+
+The residual for observation i is the difference between the actual y-i and its fitted value hat-y-i.
+
+The sum of squared residuals for hat-beta-0 and hat-beta-1 is summation of hat-u-i squared.
+
+The first order conditions for the OLS estimates are as follows: summation of (y-i minus hat-beta-0 minus hat-beta-1 times x-i) = 0, and summation of x-i times (y-i minus hat-beta-0 minus hat-beta-1 times x-i) = 0.
+
+The conditions necessary for (hat-beta-0, hat-beta-1) to minimize the sum of squared residuals are given exactly by the first order conditions.
+
+Once we have determined the OLS intercept and slope estimates, we form the OLS regression line.
+
+The sample regression function (SRF) is the estimated version of the population regression function.
+
+2.3 Properties of OLS on Any Sample of Data
+
+Algebraic Properties of OLS Statistics:
+
+1. The sum, and therefore the sample average of the OLS residuals, is zero. Mathematically, summation of hat-u-i = 0.
+
+2. The sample covariance between the regressors and the OLS residuals is zero. Mathematically, summation of x-i times hat-u-i = 0.
+
+3. The point (bar-x, bar-y) is always on the OLS regression line.
+
+Define the total sum of squares (SST) = summation of (y-i minus bar-y) squared, the explained sum of squares (SSE) = summation of (hat-y-i minus bar-y) squared, and the residual sum of squares (SSR) = summation of hat-u-i squared.
+
+SST is a measure of the total sample variation in the y-i. If we divide SST by n minus 1, we obtain the sample variance of y. Similarly, SSE measures the sample variation in the hat-y-i, and SSR measures the sample variation in the hat-u-i.
+
+The total variation in y can always be expressed as the sum of the explained variation and the unexplained variation SSR.
+
+The R-squared of the regression, sometimes called the coefficient of determination is the ratio of the explained variation compared to the total variation; thus, it is interpreted as the fraction of the sample variation in y that is explained by x.
+
+2.5 Expected Values and Variances of the OLS Estimators
+
+Assumption SLR.1: Linear in Parameters
+
+In the population model, the dependent variable, y, is related to the independent variable, x, and the error (or disturbance), u, as y = beta-0 + beta-1 times x + u, where beta-0 and beta-1 are the population intercept and slope parameters, respectively.
+
+Assumption SLR.2: Random Sampling
+
+We have a random sample of size n following the population model.
+
+Assumption SLR.3: Sample Variation in the Explanatory Variable
+
+The sample outcomes on x are not all the same value.
+
+Assumption SLR.4: Zero Conditional Mean
+
+The error u has an expected value of zero given any value of the explanatory variable.
+
+Theorem 2.1: Unbiasedness of OLS
+
+Using assumptions SLR.1 through SLR.4, E(hat-beta-0) = beta-0 and E(hat-beta-1) = beta-1 for any values of beta-0 and beta-1. In other words, hat-beta-0 is unbiased for beta-0, and hat-beta-1 is unbiased for beta-1.
+
+Assumption SLR.5: Homoskedasticity
+
+The error u has the same variance given any value of the explanatory variable. In other words, Var(u depends on x) = sigma-squared, When Variance of u depends on x, the error term is said to exhibit heteroskedasticity (or nonconstant variance).
+
+Theorem 2.2 Sampling Variances of The OLS Estimators
+
+Under Assumptions SLR.1 through SLR.5, Var(hat-beta-1) = fraction sigma-squared over summation of (x-i minus bar-x) squared = sigma-squared divided by SST-x, Var(hat-beta-0) = fraction sigma-squared times n to the minus 1 times summation of x-i squared over summation of (x-i minus bar-x) squared, where these are conditional on the sample values x-1 to x-n.
+
+Two restrictions that must be satisfied by the OLS residuals are given by the two OLS first order conditions: summation of hat-u-i = 0 and summation of x-i times hat-u-i = 0.
+
+If we know n minus 2 of the residuals, we can always get the other two residuals by using the two restrictions implied by the first order conditions. Thus, there are only n minus 2 degrees of freedom in the OLS residuals.
+
+Theorem 2.3: Unbiased Estimation of sigma-squared
+
+Under Assumptions SLR.1 through SLR.5, E(hat-sigma-squared) = sigma-squared.
+
+The natural estimator of sigma is hat-sigma = square root of hat-sigma-squared and is called the standard error of the regression (SER). Although hat-sigma is not an unbiased estimator of sigma, it is a consistent estimator of sigma.
+
+Since sd(hat-beta-1) = sigma divided by square root of SST-x, the natural estimator of sd(hat-beta-1) is se(hat-beta-1) = hat-sigma divided by square root of SST-x, this is called the standard error of hat-beta-1.
