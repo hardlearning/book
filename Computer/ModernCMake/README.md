@@ -1,0 +1,1 @@
+* [Chapter 7: Managing Dependencies with CMake](Cpp/ModernCMake/Chapter07.md)
