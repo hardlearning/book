@@ -1,0 +1,131 @@
+Chapter 3 Multiple Regression Analysis Estimation
+
+3.1 Motivation for Multiple Regression
+
+The Model with k Independent Variables
+
+In the general multiple linear regression model, beta-0 is the intercept, beta-1, beta-2, dots, beta-k is the slope parameters, u is the error term or disturbance.
+
+y = beta-0 + beta-1 times x-1 + beta-2 times x-2 + beta-3 times x-3 + dots + beta-k times x-k + u.
+
+3.2 Mechanics and Interpretation of Ordinary Least Squares
+
+Obtaining the OLS Estimates
+
+The method of ordinary least squares chooses the estimates to minimize the sum of squared residuals.
+
+summation from 1 to n of (y-i minus hat-beta-0 minus hat-beta-1 times x-i1 minus hat-beta-2 times x-i2) squared.
+
+This minimization problem can be solved using multivariable calculus. These are often called the OLS first order conditions.
+
+summation from 1 to n of (y-i minus hat-beta-0 minus hat-beta-1 times x-i1 minus dots minus hat-beta-k times x-ik) = 0,
+
+summation from 1 to n of x-ik times (y-i minus hat-beta-0 minus hat-beta-1 times x-i1 minus dots minus hat-beta-k times x-ik) = 0.
+
+We will call hat-beta-0 the OLS intercept estimate and hat-beta-1, dots, hat-beta-k the OLS slope estimates (corresponding to the independent variables x-1,x-2,dots,x-k).
+
+Interpreting the OLS Regression Equation
+
+The estimates hat-beta-1 and hat-beta-2 have partial effect interpretations.
+
+Delta-hat-y = hat-beta-1 times Delta-x-1 + hat-beta-2 times Delta-x-2.
+
+OLS Fitted Values and Residuals
+
+The OLS fitted values and residuals have some important properties:
+
+1. The sample average of the residuals is zero and so bar-y=bar-hat-y.
+
+2. The sample covariance between each independent variable and the OLS residuals is zero. Consequently, the sample covariance between the OLS fitted values and the OLS residuals is zero.
+
+3. The point (bar-x-1, bar-x-2, dots, bar-x-k, bar-y) is always on the OLS regression line.
+
+Goodness-of-Fit
+
+The R-squared can also be shown to equal the squared correlation coefficient between the actual y-i and the fitted values hat-y-i.
+
+R-squrared = (summation from 1 to n of (y-i minus bar-y) times (hat-y-i minus bar-hat-y)) squared divided by (summation from 1 to n of (y-i minus bar-y) squared) times (summation from 1 to n of (hat-y-i minus bar-hat-y) squared)
+
+3.3 The Expected Value of the OLS Estimators
+
+Assumption MLR.1: Linear in Parameters
+
+In the population model, beta-0, beta-1, dots, beta-k are the unknown parameters (constants) of interest and u is an unobserved random error or disturbance term.
+
+y = beta-0 + beta-1 times x-1 + beta-2 times x-2 + dots + beta-k times x-k + u.
+
+Assumption MLR.2: Random Sampling
+
+We have a random sample of n observations following the population model in Assumption MLR.1.
+
+Assumption MLR.3: No Perfect Collinearity
+
+In the sample (and therefore in the population), none of the independent variables is constant, and there are no exact linear relationships among the independent variables.
+
+If an independent variable is an exact linear combination of the other independent variables, then we say the model suffers from perfect collinearity, and it cannot be estimated by OLS.
+
+Assumption MLR.4: Zero Conditional Mean
+
+The error u has an expected value of zero given any values of the independent variables.
+
+E(u depends on x-1,x-2,dots,x-k) = 0.
+
+When Assumption MLR.4 holds, we often say that we have exogenous explanatory variables. If x-j is correlated with u for any reason, then x-j is said to be an endogenous explanatory variable.
+
+**Theorem 3.1: Unbiasedness of OLS**
+
+Under Assumptions MLR.1 through MLR.4, the OLS estimators are unbiased estimators of the population parameters.
+
+E(hat-beta-j) = beta-j.
+
+3.4 The Variance of the OLS Estimators
+
+Assumption MLR.5: Homoskedasticity
+
+The error u has the same variance given any values of the explanatory variables. 
+
+Var(u depends on x-1,dots,x-k) = sigma-squared.
+
+Assumptions MLR.1 through MLR.5 are collectively known as the Gauss-Markov assumptions.
+
+Theorem 3.2 Sampling Variances of The OLS Slope Estimators
+
+Var(hat-beta-j) = sigma-squared divided by SST-j times (1 minus R-j-squared).
+
+SST-j = summation from 1 to n of (x-ij minus bar-x) squared. 
+
+The SST-j is the total sample variation in x-j, and R-j-squared is the R-squared from regressing x-j on all other independent variables (and including an intercept).
+
+The Components of the OLS Variances: Multicollinearity
+
+High (but not perfect) correlation between two or more independent variables is called multicollinearity.
+
+The variance inflation factor (VIF) for slope coefficient j is VIF-j = fraction 1 over 1 minus R-j-squared.
+
+Estimating sigma-squared: Standard Errors of the OLS Estimators
+
+The unbiased estimator of sigma-squared in the general multiple regression case is hat-sigma-squared.
+
+hat-sigma-squared = (summation from 1 to n of hat-u-i-squared) divided by (n minus k minus 1) = SSR divided by (n minus k minus 1)
+
+The term n minus k minus 1 is the degrees of freedom (df) for the general OLS problem with n observations and k independent variables. Since there are k+1 parameters in a regression model with k independent variables and an intercept, we can write df = (number of observations) minus (number of parameters) = n minus (k+1).
+
+Theorem 3.3 Unbiased Estimation of sigma-squared
+
+Under the Gauss-Markov assumptions MLR.1 through MLR.5, E(hat-sigma-squared)=sigma-squared.
+
+The positive square root of hat-sigma-squared, denoted hat-sigma, is called the standard error of the regression (SER).
+
+The standard deviation of hat-beta-j is just the square root of the variance.
+
+sd(hat-beta-j) = sigma divided by [SST-j times (1 minus R-j-squared)] to the fraction 1 over 2.
+
+Since sigma is unknown, we replace it with its estimator, hat-sigma. This gives us the standard error of hat-beta-j.
+
+se(hat-beta-j) = hat-sigma divided by [SST-j times (1 minus R-j-squared)] to the fraction 1 over 2.
+
+3.5 Efficiency of OLS: The Gauss-Markov Theorem
+
+Theorem 3.4 Gauss-Markov Theorem
+
+Under Assumptions MLR.1 through MLR.5, hat-beta-0, hat-beta-1, dots, hat-beta-k are the best linear unbiased estimators (BLUEs) of beta-0, beta-1, dots, beta-k, respectively.
