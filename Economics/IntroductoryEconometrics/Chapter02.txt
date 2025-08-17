@@ -1,3 +1,5 @@
+Chapter 2 The Simple Regression Model
+
 2.1 Definition of the Simple Regression Model
 
 The average value of u does not depend on the value of x. We say that u is mean independent of x.
