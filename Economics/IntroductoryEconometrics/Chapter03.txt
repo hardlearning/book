@@ -14,13 +14,13 @@ Obtaining the OLS Estimates
 
 The method of ordinary least squares chooses the estimates to minimize the sum of squared residuals.
 
-summation from 1 to n of (y-i minus hat-beta-0 minus hat-beta-1 times x-i1 minus hat-beta-2 times x-i2) squared.
+summation of (y-i minus hat-beta-0 minus hat-beta-1 times x-i1 minus hat-beta-2 times x-i2) squared.
 
 This minimization problem can be solved using multivariable calculus. These are often called the OLS first order conditions.
 
-summation from 1 to n of (y-i minus hat-beta-0 minus hat-beta-1 times x-i1 minus dots minus hat-beta-k times x-ik) = 0,
+summation of (y-i minus hat-beta-0 minus hat-beta-1 times x-i1 minus dots minus hat-beta-k times x-ik) = 0,
 
-summation from 1 to n of x-ik times (y-i minus hat-beta-0 minus hat-beta-1 times x-i1 minus dots minus hat-beta-k times x-ik) = 0.
+summation of x-ik times (y-i minus hat-beta-0 minus hat-beta-1 times x-i1 minus dots minus hat-beta-k times x-ik) = 0.
 
 We will call hat-beta-0 the OLS intercept estimate and hat-beta-1, dots, hat-beta-k the OLS slope estimates (corresponding to the independent variables x-1,x-2,dots,x-k).
 
@@ -44,7 +44,7 @@ Goodness-of-Fit
 
 The R-squared can also be shown to equal the squared correlation coefficient between the actual y-i and the fitted values hat-y-i.
 
-R-squrared = (summation from 1 to n of (y-i minus bar-y) times (hat-y-i minus bar-hat-y)) squared divided by (summation from 1 to n of (y-i minus bar-y) squared) times (summation from 1 to n of (hat-y-i minus bar-hat-y) squared)
+R-squrared = (summation of (y-i minus bar-y) times (hat-y-i minus bar-hat-y)) squared divided by (summation of (y-i minus bar-y) squared) times (summation of (hat-y-i minus bar-hat-y) squared)
 
 3.3 The Expected Value of the OLS Estimators
 
@@ -72,7 +72,7 @@ E(u depends on x-1,x-2,dots,x-k) = 0.
 
 When Assumption MLR.4 holds, we often say that we have exogenous explanatory variables. If x-j is correlated with u for any reason, then x-j is said to be an endogenous explanatory variable.
 
-**Theorem 3.1: Unbiasedness of OLS**
+Theorem 3.1: Unbiasedness of OLS
 
 Under Assumptions MLR.1 through MLR.4, the OLS estimators are unbiased estimators of the population parameters.
 
@@ -92,7 +92,7 @@ Theorem 3.2 Sampling Variances of The OLS Slope Estimators
 
 Var(hat-beta-j) = sigma-squared divided by SST-j times (1 minus R-j-squared).
 
-SST-j = summation from 1 to n of (x-ij minus bar-x) squared. 
+SST-j = summation of (x-ij minus bar-x) squared. 
 
 The SST-j is the total sample variation in x-j, and R-j-squared is the R-squared from regressing x-j on all other independent variables (and including an intercept).
 
@@ -106,7 +106,7 @@ Estimating sigma-squared: Standard Errors of the OLS Estimators
 
 The unbiased estimator of sigma-squared in the general multiple regression case is hat-sigma-squared.
 
-hat-sigma-squared = (summation from 1 to n of hat-u-i-squared) divided by (n minus k minus 1) = SSR divided by (n minus k minus 1)
+hat-sigma-squared = (summation of hat-u-i-squared) divided by (n minus k minus 1) = SSR divided by (n minus k minus 1)
 
 The term n minus k minus 1 is the degrees of freedom (df) for the general OLS problem with n observations and k independent variables. Since there are k+1 parameters in a regression model with k independent variables and an intercept, we can write df = (number of observations) minus (number of parameters) = n minus (k+1).
 
