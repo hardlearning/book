@@ -1,6 +1,10 @@
-# Book
+基本操作
 
-* [AI](AI/README.md)
-* [Computer](Computer/README.md)
-* [Economics](Economics/README.md)
-* [Paper](Paper/README.md)
+```bash
+# 安装插件
+npm i docsify-cli -g
+# 新建项目docs
+docsify init ./docs
+# 启动项目docs
+docsify serve docs
+```
