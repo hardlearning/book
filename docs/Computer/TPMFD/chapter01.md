@@ -24,7 +24,7 @@ tnux -V
 
 ## Starting tmux
 
-> Creating Named Sessions
+#### Creating Named Sessions
 
 ```
 # Create a named session called “basic”
