@@ -162,3 +162,17 @@ $$
 where the symbol “$\amalg$” denotes the independence relation and random variables to the right of the vertical bar are the conditioning set.
 
 ### 3.2.2 The Omitted Variables Bias Formula
+
+The omitted variables bias (OVB) formula describes the relationship between regression estimates in models with different sets of control variables.
+
+**OMITTED VARIABLES BIAS FORMULA**
+
+$$
+\frac{Cov(Y_i,s_i)}{V(s_i)}=\rho+\gamma^\prime\delta_{As}
+$$
+
+where $\delta_{As}$ is the vector of coefficients from regressions of the elements of $A_i$ on $s_i$.
+
+To paraphrase, the OVB formula says: Short equals long plus the effect of omitted times the regression of omitted on included.
+
+## 3.2.3 Bad Control
