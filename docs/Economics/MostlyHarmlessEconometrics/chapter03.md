@@ -4,9 +4,11 @@
 
 ### 3.1.1 Economic Relationships and the Conditional Expectation Function
 
-The conditional expectation function (CEF) for a dependent variable $Y_i$, given a $K\times 1$ vector of covariates $X_i$, is the expectation or population average with $X_i$ held fixed.
+The conditional expectation function (CEF) for a dependent variable $Y_i$, given a $k\times 1$ vector of covariates $X_i$ (with elements $x_{ki}$), is the expectation or population average, of $Y_i$ with $X_i$ held fixed.
 
-For continuous $Y_i$ with conditional density $f_y(t|X_i = x)$ at $Y_i = t$, the CEF is  
+The CEF is written $E[Y_i|X_i]$ and is a function of $X_i$.
+
+For continuous $Y_i$ with conditional density $f_y(t|X_i = x)$ at $Y_i = t$, the CEF is
 
 $$
 E[Y_i|X_i = x]=\int tf_y(t|X_i=x)dt
@@ -26,7 +28,9 @@ $$
 E[Y_i] = E\{E[Y_i|X_i]\}
 $$
 
-where the outer expectation uses the distribution of $X_i$.
+where the outer expectation uses the distribution of $X_i$.(处在外面一层的期望算子针对$X_i$的分布求期望)
+
+The power of the law of iterated expectations comes from the way it breaks a random variable into two pieces, the CEF and a residual with special properties.
 
 **Theorem 3.1.1** The CEF Decomposition Property.
 
@@ -36,6 +40,8 @@ $$
 
 where (i) $\epsilon_i$ is mean independent of $X_i$, that is, $E[\epsilon_i|X_i] = 0$, and therefore (ii) $\epsilon_i$ is uncorrelated with any function of $X_i$.
 
+The CEF is the best predictor of $Y_i$ given $X_i$ in the sense that it solves a minimum mean squared error (MMSE) prediction problem.
+
 **Theorem 3.1.2** The CEF Prediction Property. 
 
 Let $m(X_i)$ be any function of $X_i$. The CEF solves
@@ -44,7 +50,7 @@ $$
 E[Y_i|X_i]=\arg\min_{m(X_i)}E[(Y_i-m(X_i))^2],
 $$
 
-so it is the minimum mean squared error (MMSE) predictor of $Y_i$ given $X_i$.
+so it is the MMSE predictor of $Y_i$ given $X_i$.
 
 **Theorem 3.1.3** The analysis of variance (ANOVA) theorem.
 
@@ -78,14 +84,23 @@ In the multivariate case, with more than one nonconstant regressor, the slope co
 
 **REGRESSION ANATOMY**
 $$
-\beta_k=\frac{Cov(Y_i,\tilde{x}_{ki})}{V(\tilde{x}_{ki})},
+\beta_k=\frac{Cov(Y_i,\tilde{x}_{ki})}{V(\tilde{x}_{ki})}, \quad (3.1.3)
 $$
 
-where $\tilde{x}_{ki}$ is the residual from a regression of $x_{ki}$ on all the other covariates. In other words, $E[X_i X^\prime_i]^{-1}E[X_i Y_i]$ is the $k\times 1$ vector with kth element $\frac{Cov(Y_i,\tilde{x}_{ki})}{V(\tilde{x}_{ki})}$.
+where $\tilde{x}_{ki}$ is the residual from a regression of $x_{ki}$ on all the other covariates.($\tilde{x}_{ki}$是将$x_{ki}$关于其他协变量回归后得到的残差项)
+
+In other words, $E[X_i X^\prime_i]^{-1}E[X_i Y_i]$ is the $k\times 1$ vector with kth element $\frac{Cov(Y_i,\tilde{x}_{ki})}{V(\tilde{x}_{ki})}$.
+
+This formula (3.1.3) shows us that each coefficient in a multivariate regression is the bivariate slope coefficient for the corresponding regressor after partialing out all the other covariates. (这个公式告诉我们多元回归中每个回归元的系数都是该回归元在剔除其他回归元对自己的影响后与$Y_i$进行二元回归得到的斜率)
 
 **Theorem 3.1.4** The Linear CEF Theorem (Regression Justification I). 
 
 Suppose the CEF is linear. Then the population regression function is it.
+
+The linear CEF theorem raises the question of what makes a CEF linear:
+
+1. The classic scenario is joint normality, that is, the vector $(Y_i,X_i^\prime)^\prime$ has a multivariate normal distribution.
+2. Another linearity scenario arises when regression models are saturated.
 
 **Theorem 3.1.5** The Best Linear Predictor Theorem (Regression Justification II).
 
@@ -175,4 +190,12 @@ where $\delta_{As}$ is the vector of coefficients from regressions of the elemen
 
 To paraphrase, the OVB formula says: Short equals long plus the effect of omitted times the regression of omitted on included.
 
-## 3.2.3 Bad Control
+### 3.2.3 Bad Control
+
+Bad controls are variables that are themselves outcome variables in the notional experiment at hand. That is, bad controls might just as well be dependent variables too.
+
+## 3.3 Heterogeneity and Nonlinearity
+
+### 3.3.1 Regression Meets Matching
+
+Matching estimators are appealingly simple: at bottom, matching amounts to covariate-specific treatment-control comparisons, weighted together to produce a single overall average treatment effect. (事实上，匹配法对由每个协变量的特定值所决定的个体计算处理组和控制组之间的平均差异，然后用加权平均的方式将这些因果效应汇总到一个总的因果效应中。)
