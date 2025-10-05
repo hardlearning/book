@@ -1,1 +1,1 @@
-* [TradingView Pine Script Programming From Scratch](Quant/TVPSPFS/README.md)
+* [TradingView Pine Script Programming From Scratch](TVPSPFS/README.md)

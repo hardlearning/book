@@ -1,2 +1,2 @@
 * [Introductory Econometrics](IntroductoryEconometrics/README.md)
-* [Mostly Harmless Econometrics](Economics/MostlyHarmlessEconometrics/README.md)
+* [Mostly Harmless Econometrics](MostlyHarmlessEconometrics/README.md)
