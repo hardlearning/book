@@ -110,7 +110,160 @@ By default, floating-point literals have type double.
 
 #### Character and Character String Literals
 
+A character enclosed within single quotes is a literal of type char. Zero or more characters enclosed in double quotation marks is a string literal:
+
 ```cpp
 'a' // character literal
 "Hello World!" // string literal
 ```
+
+The compiler appends a null character ('\0') to every string literal. Thus, the actual size of a string literal is one more than its apparent size.
+
+Two string literals that appear adjacent to one another and that are separated only by spaces, tabs, or newlines are concatenated into a single literal.
+
+```cpp
+// multiline string literal
+std::cout << "a really, really long string literal "
+             "that spans two lines" << std::endl;
+```
+
+#### Escape Sequences
+
+An escape sequence begins with a backslash. The language defines several escape sequences:
+
+|Meaning|Escape Sequence|
+|--|--|
+|newline|\n|
+|horizontal tab|\t|
+|alert (bell)|\a|
+|vertical tab|\v|
+|backspace|\b|
+|double quote|\\"|
+|backslash|\\\\ |
+|question mark|\\?|
+|single quote|\\'|
+|carriage return|\r|
+|formfeed|\f|
+
+#### Specifying the Type of a Literal
+
+```cpp
+L'a'     // wide character literal, type is wchar_t
+u8"hi!"  // utf-8 string literal (utf-8 encodes a Unicode character in 8 bits)
+42ULL    // unsigned integer literal, type is unsigned long long
+1E-3F    // single-precision floating-point literal, type is float
+3.14159L // extended-precision floating-point literal, type is long double
+```
+
+#### Boolean and Pointer Literals
+
+The word nullptr is a pointer literal.
+
+## 2.2. Variables
+
+### 2.2.1. Variable Definitions
+
+A definition may (optionally) provide an initial value for one or more of the names it defines:
+
+```cpp
+int sum = 0, value, // sum, value, and units_sold have type int
+units_sold = 0;     // sum and units_sold have initial value 0
+Sales_item item;    // item has type Sales_item (see § 1.5.1 (p. 20))
+// string is a library type, representing a variable-length sequence of characters
+std::string book("0-201-78345-X"); // book initialized from string
+literal
+```
+
+#### Initializers
+
+An object that is initialized gets the specified value at the moment it is created.
+
+```cpp
+// ok: price is defined and initialized before it is used to initialize discount
+double price = 109.99, discount = price * 0.16;
+// ok: call applyDiscount and use the return value to initialize salePrice
+double salePrice = applyDiscount(price, discount);
+```
+
+Initialization is not assignment. Initialization happens when a variable is given a value when it is created. Assignment obliterates an object’s current value and replaces that value with a new one.
+
+#### List Initialization
+
+```cpp
+int units_sold = 0;
+int units_sold = {0};
+int units_sold{0};
+int units_sold(0);
+```
+
+The form of initialization that uses curly braces is referred to as list initialization.
+
+The compiler will not let us list initialize variables of built-in type if the initializer might lead to the loss of information:
+
+```cpp
+long double ld = 3.1415926536;
+int a{ld}, b = {ld}; // error: narrowing conversion required
+int c(ld), d = ld; // ok: but value will be truncated
+```
+
+#### Default Initialization
+
+The value of an object of built-in type that is not explicitly initialized depends on where it is defined. Variables defined outside any function body are initialized to zero. With one exception, variables of built-in type defined inside a function are uninitialized. The value of an uninitialized variable of built-in type is undefined.
+
+Note: Uninitialized objects of built-in type defined inside a function body have undefined value. Objects of class type that we do not explicitly initialize have a value that is defined by the class.
+
+### 2.2.2. Variable Declarations and Definitions
+
+A variable declaration specifies the type and name of a variable. A variable definition is a declaration. In addition to specifying the name and type, a definition also allocates storage and may provide the variable with an initial value.
+
+To obtain a declaration that is not also a definition, we add the extern keyword and may not provide an explicit initializer:
+
+```cpp
+extern int i; // declares but does not define i
+int j;        // declares and defines j
+```
+
+An extern that has an initializer is a definition:
+
+```cpp
+extern double pi = 3.1416; // definition
+```
+
+It is an error to provide an initializer on an extern inside a function.
+
+Note: Variables must be defined exactly once but can be declared many times.
+
+### 2.2.3. Identifiers
+
+Identifiers in C+ + can be composed of letters, digits, and the underscore character.
+
+The identifiers we define in our own programs may not contain two consecutive underscores, nor can an identifier begin with an underscore followed immediately by an uppercase letter. In addition, identifiers defined outside a function may not begin with an underscore.
+
+### 2.2.4. Scope of a Name
+
+A scope is a part of the program in which a name has a particular meaning. Most scopes in C+ + are delimited by curly braces.
+
+#### Nested Scopes
+
+Names declared in the outer scope can also be redefined in an inner scope:
+
+```cpp
+#include <iostream>
+// Program for illustration purposes only: It is bad style for a function
+// to use a global variable and also define a local variable with the same name
+int reused = 42; // reused has global scope
+int main()
+{
+    int unique = 0; // unique has block scope
+    // output #1: uses global reused; prints 42 0
+    std::cout << reused << " " << unique << std::endl;
+    int reused = 0; // new, local object named reused hides global reused
+    // output #2: uses local reused; prints 0 0
+    std::cout << reused << " " << unique << std::endl;
+    // output #3: explicitly requests the global reused; prints 42 0
+    std::cout << ::reused << " " << unique << std::endl;
+    return 0;
+}
+```
+
+## 2.3. Compound Types
