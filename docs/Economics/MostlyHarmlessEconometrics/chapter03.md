@@ -213,6 +213,8 @@ To paraphrase, the OVB formula says: Short equals long plus the effect of omitte
 
 Bad controls are variables that are themselves outcome variables in the notional experiment at hand. That is, bad controls might just as well be dependent variables too.
 
+Good controls are variables that we can think of as having been fixed at the time the regressor of interest was determined.
+
 ## 3.3 Heterogeneity and Nonlinearity
 
 ### 3.3.1 Regression Meets Matching
