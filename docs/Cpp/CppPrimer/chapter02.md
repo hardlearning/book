@@ -267,3 +267,198 @@ int main()
 ```
 
 ## 2.3. Compound Types
+
+### 2.3.1. References
+
+A reference defines an alternative name for an object.
+
+```cpp
+int ival = 1024;
+int &refVal = ival; // refVal refers to (is another name for) ival
+int &refVal2;       // error: a reference must be initialized
+```
+
+When we define a reference, instead of copying the initializer's value, we bind the reference to its initializer.
+
+There is no way to rebind a reference to refer to a different object.
+
+#### A Reference Is an Alias
+
+After a reference has been defined, all operations on that reference are actually operations on the object to which the reference is bound:
+
+```cpp
+refVal = 2; // assigns 2 to the object to which refVal refers, i.e., to ival
+int ii = refVal; // same as ii = ival
+
+// ok: refVal3 is bound to the object to which refVal is bound, i.e., to ival
+int &refVal3 = refVal;
+// initializes i from the value in the object to which refVal is bound
+int i = refVal; // ok: initializes i to the same value as ival
+```
+
+#### Reference Definitions
+
+We can define multiple references in a single definition. Each identifier that is a reference must be preceded by the & symbol:
+
+```cpp
+int i = 1024, i2 = 2048; // i and i2 are both ints
+int &r = i, r2 = i2;     // r is a reference bound to i; r2 is an int
+int i3 = 1024, &ri = i3; // i3 is an int; ri is a reference bound to i3
+int &r3 = i3, &r4 = i2;  // both r3 and r4 are references
+```
+
+The type of a reference and the object to which the reference refers must match exactly.
+
+A reference may be bound only to an object, not to a literal or to the result of a more general expression:
+
+```cpp
+int &refVal4 = 10; // error: initializer must be an object
+double dval = 3.14;
+int &refVal5 = dval; // error: initializer must be an int object
+```
+
+### 2.3.2. Pointers
+
+Like references, pointers are used for indirect access to other objects. Unlike a reference, a pointer is an object in its own right.
+
+```cpp
+int *ip1, *ip2;  // both ip1 and ip2 are pointers to int
+double dp, *dp2; // dp2 is a pointer to double; dp is a double
+```
+
+#### Taking the Address of an Object
+
+We get the address of an object by usin the address-of operator (the & operator):
+
+```cpp
+int ival = 42;
+int *p = &ival; // p holds the address of ival; p is a pointer to ival
+```
+
+Because references are not objects, they don’t have addresses. Hence, we may not define a pointer to a reference.
+
+The types of the pointer and the object to which it points must match:
+
+```cpp
+double dval;
+double *pd = &dval; // ok: initializer is the address of a double
+double *pd2 = pd;   // ok: initializer is a pointer to double
+int *pi = pd; // error: types of pi and pd differ
+pi = &dval;   // error: assigning the address of a double to a pointer to int
+```
+
+#### Pointer Value
+
+The value stored in a pointer can be in one of four states:
+
+1. It can point to an object.
+2. It can point to the location just immediately past the end of an object.
+3. It can be a null pointer, indicating that it is not bound to any object.
+4. It can be invalid; values other than the preceding three are invalid.
+
+It is an error to copy or otherwise try to access the value of an invalid pointer. The result of accessing an invalid pointer is undefined.
+
+Because pointers in cases 2 and 3 do not point to any object, we may not use them to access the (supposed) object to which the pointer points. If we do attempt to access an object through such pointers, the behavior is undefined.
+
+#### Using a Pointer to Access an Object
+
+When a pointer points to an object, we can use the dereference operator (the * operator) to access that object:
+
+```cpp
+int ival = 42;
+int *p = &ival; // p holds the address of ival; p is a pointer to ival
+cout << *p;     // * yields the object to which p points; prints 42
+
+*p = 0; // * yields the object; we assign a new value to ival through p
+cout << *p; // prints 0
+```
+
+> Key Concept: Some Symbols Have Multiple Meanings
+
+```cpp
+int i = 42;
+int &r = i;   // & follows a type and is part of a declaration; r is a reference
+int *p;       // * follows a type and is part of a declaration; p is a pointer
+p = &i;       // & is used in an expression as the address-of operator
+*p = i;       // * is used in an expression as the dereference operator
+int &r2 = *p; // & is part of the declaration; * is the dereference operator
+```
+
+#### Null Pointers
+
+```cpp
+int *p1 = nullptr; // equivalent to int *p1 = 0;
+int *p2 = 0; // directly initializes p2 from the literal constant 0
+// must #include cstdlib
+int *p3 = NULL; // equivalent to int *p3 = 0;
+```
+
+`nullptr` is a literal that has a special type that can be converted to any other pointer type.
+
+Older programs sometimes use a preprocessor variable named `NULL`, which the cstdlib header defines as 0.
+
+When we use a preprocessor variable, the preprocessor automatically replaces the variable by its value. Hence, initializing a pointer to NULL is equivalent to initializing it to 0.
+
+It is illegal to assign an int variable to a pointer, even if the variable’s value happens to be 0.
+
+```cpp
+int zero = 0;
+pi = zero; // error: cannot assign an int to a pointer
+```
+
+> Advice: Initialize all Pointers
+
+Uninitialized pointers are a common source of run-time errors.
+
+If there is no object to bind to a pointer, then initialize the pointer to nullptr or zero. That way, the program can detect that the pointer does not point to an object.
+
+#### Assignment and Pointers
+
+Assignment makes the pointer point to a different object:
+
+```cpp
+int i = 42;
+int *pi = 0; // pi is initialized but addresses no object
+int *pi2 = &i; // pi2 initialized to hold the address of i
+int *pi3; // if pi3 is defined inside a block, pi3 is uninitialized
+pi3 = pi2; // pi3 and pi2 address the same object, e.g., i
+pi2 = 0; // pi2 now addresses no object
+```
+
+The important thing to keep in mind is that assignment changes its left -hand operand.
+
+```cpp
+pi = &ival; // value in pi is changed; pi now points to ival
+*pi = 0;    // value in ival is changed; pi is unchanged
+```
+
+#### Other Pointer Operations
+
+If the pointer is 0, then the condition is false:
+
+```cpp
+int ival = 1024;
+int *pi = 0; // pi is a valid, null pointer
+int *pi2 = &ival; // pi2 is a valid pointer that holds the address of ival
+if (pi) // pi has value 0, so condition evaluates as false
+    // ...
+if (pi2) // pi2 points to ival, so it is not 0; the condition evaluates as true
+    // ...
+```
+
+Two pointers are equal if they hold the same address and unequal otherwise. Two pointers hold the same address if they are both null, if they address the same object, or if they are both pointers one past the same object.
+
+#### void* Pointers
+
+The type void* is a special pointer type that can hold the address of any object.
+
+```cpp
+double obj = 3.14, *pd = &obj;
+// ok: void* can hold the address value of any data pointer type
+void *pv = &obj; // obj can be an object of any type
+pv = pd; // pv can hold a pointer to any type
+```
+
+There are only a limited number of things we can do with a void* pointer: We can compare it to another pointer, we can pass it to or return it from a function, and we can assign it to another void* pointer. We cannot use a void* to operate on the object it addresses.
+
+### 2.3.3. Understanding Compound Type Declarations
