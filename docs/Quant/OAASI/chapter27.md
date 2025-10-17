@@ -88,3 +88,67 @@ The conversion involves buying stock, and the trader will thus receive any divid
 In the example above, the conversion position cost 49.50 points to establish. If the trader's cost of money were 6% annually, he would thus lose $0.06/12 \times 49.50=0.2475$ point per month for each month that he holds the position. This is nearly 25 cents per month. Recall that the potential profit in the example is 50 cents, so that if one held the position for more than two months, his earning costs would wipe out his profit.
 
 If one prefers formulae, the profit potentials of a conversion or a reversal can be stated as:
+
+$$
+\begin{aligned}
+&\text{Conversion profit}=\text{Striking price}+\text{Call price}-\text{Underlying price}-\text{Put price}+\text{Dividends to be received}-\text{Carrying cost of position} \\
+&\text{Reversal profit}=\text{Underlying}+\text{Put}-\text{Strike}-\text{Call}+\text{Carrying cost}-\text{Dividends}
+\end{aligned}
+$$
+
+Example: It is assumed that XYZ stock is going to pay a 50-cent dividend during the life of the position, and that the position will have to be held for three months at a carrying cost of 6% per year. If the arbitrageur were interested in a conversion with a striking price of 50, and the options are for 100 shares of XYZ, his fixed cost would be:
+
+$$
+\begin{aligned}
+\text{Conversion fixed cost}&=\text{Carrying rate}\times\text{Time held}\times\text{Striking price}-\text{Dividend to be received} \\
+&=0.06\times\frac{3}{12}\times 50-0.50 \\
+&=0.75-0.50=0.25
+\end{aligned}
+$$
+
+The arbitrageur would know that if the profit potential was greater than 25 cents, he could establish the conversion for an eventual profit.
+
+## 27.4 MORE ON CARRYING COSTS
+
+Simplistically, the carrying cost is computed by multiplying the debit of the position by the interest rate charged and the time that the position will be held. That is, it could be formulated as:
+
+$$
+\text{Carrying cost}=\text{Strike}\times r \times t
+$$
+
+where r is the interest rate and t is the time that the position will be held. Relating this formula for the carrying cost to the conversion profit formula given above, one would get:
+
+$$
+\begin{aligned}
+\text{Conversion profit}&=\text{Call}-\text{Underlying}-\text{Put}+\text{Dividends}+\text{Strike}-\text{Carrying cost} \\
+&=\text{Call}-\text{Underlying}-\text{Put}+\text{Dividends}+\text{Strike}(1-rt)
+\end{aligned}
+$$
+
+The absolutely correct formula to include both present value and the compounding effect would necessitate replacing the factor strike (1-rt) in the profit formula by the factor
+
+$$
+\frac{\text{Strike}}{(1+r)^t}
+$$
+
+## 27.5 BACK TO CONVERSIONS AND REVERSALS
+
+*Example*: XYZ is going to pay a 50-cent dividend, the position will be held for three months, and the money will earn interest at a rate ot $\frac{1}{2}$ of 1% per month. If the trader were contemplating an arbitrage with a striking price of 30, the fixed cost would be:
+
+$$
+\begin{aligned}
+\text{Reversal fixed cost}&=\text{Dividend to be paid}-\text{Interest rate per month}\times\text{Months held}\times\text{Striking price} \\
+&=0.50-0.005\times 3\times 30 \\
+&=0.50-0.045=0.005
+\end{aligned}
+$$
+
+It is often possible that there will be a fixed credit (固定收入), not a fixed cost, in a reversal arbitrage.
+
+### BORROWING STOCK TO SELL SHORT
+
+If the stock to be sold short in the reversal were available in one of the margin accounts, the arbitrageur could borrow that stock and earn the full carrying rate on it. This is called "using box stock," since stock held in margin accounts is generally referred to as being in the "box."
+
+Reversals are generally easier positions for the arbitrageur to locate than are conversions.
+
+## 27.6 RISKS IN CONVERSIONS AND REVERSALS
