@@ -52,3 +52,39 @@ The arbitrageur has a carrying cost (持有成本) for the money that he must ti
 The arbitrageur should note that this strategy of buying the put and buying the stock to pick up the dividend might have a residual, rather profitable side effect (副作用). If the underlying stock should rally up to or above the striking price of the put, there could be rather large profits in this position.
 
 Risk arbitrage is a strategy that is designed to lock in a profit if a certain event occurs. If that event does not occur, there could be a loss (usually quite limited).
+
+Example: The normal quarterly rate of XYZ is $1.00 per share. Suppose its special dividend in the fourth quarter has ranged from an extra $1.00 to $3.00 over the past five years. XYZ is trading at 55 about two weeks before the company is going to announce the dividend for the fourth quarter. Furthermore, suppose the January 60 put is trading at 7.50. This put has 2.50 points of time value premium. If the arbitrageur buys XYZ at 55 and also buys the January 60 put at 7.50, he is setting up a risk arbitrage. A special dividend of $1.50 plus the regular dividend of $1.00 would add up to $2.50, thus covering his risk in the position.
+
+If a relatively high-yield stock is about to go ex-dividend, holders of the calls will attempt to sell. They do so because the stock will drop in price, thereby generally forcing the call to drop in price as well, because of the dividend.
+
+The effect of these call holders attempting to sell their calls may often produce a discount option, and therefore a basic call arbitrage may be possible.
+
+Since he must sell the stock to set up the arbitrage, he cannot afford to wind up the day being short any stock, for he will then have to pay out the dividend the following day. (因为他必须卖出股票来建立这个套利，在这一天结束时他不能持有这个卖空股票的头寸，否则第二天就要支付股息)
+
+## 27.3 CONVERSIONS AND REVERSALS
+
+A conversion consists of buying the underlying entity, and also buying a put option and selling a call option such that both options have the same terms. This position will have a locked-in profit if the total cost of the position is less than the striking price of the options.
+
+*Example*: The following prices exist:
+
+- XYZ common, 55;
+- XYZ January 50 call, 6.50; 
+- XYZ January 50 put, 1.
+
+Suppose that these options are for 100 shares of XYZ. The total cost of this conversion is 49.50 — 55 for the stock, plus 1 for the put, less 6.50 for the call. Since 49.50 is less than the striking price of 50, there is a locked-in profit on this position. It makes no difference how far above 50 the stock might be; the result will be the same.
+
+In a reversal, the trader sells the underlying entity short, sells a put, and buys a call. Again, the put and call have the same terms. A reversal will be profitable if the initial credit (sale price) is greater than the striking price of the options.
+
+*Example*: A different set of prices will be used to describe a reversal:
+
+- XYZ common, 55;
+- XYZ January 60 call, 2;
+- XYZ January 60 put, 7.50.
+
+Suppose that these options are for 100 shares of XYZ. The total credit of the reversal is 60.50 — 55 from the stock sale, plus 7.50 from the put sale, less the 2-point cost of the call. Since 60.50 is greater than the striking price of the options, 60, there is a locked-in profit equal to the differential of 50 cents.
+
+The conversion involves buying stock, and the trader will thus receive any dividends paid by the stock during the life of the arbitrage. However, the converter also has to pay out a rather large sum of money to set up his arbitrage, and must therefore deduct the cost of carrying the position from his potential profits.
+
+In the example above, the conversion position cost 49.50 points to establish. If the trader's cost of money were 6% annually, he would thus lose $0.06/12 \times 49.50=0.2475$ point per month for each month that he holds the position. This is nearly 25 cents per month. Recall that the potential profit in the example is 50 cents, so that if one held the position for more than two months, his earning costs would wipe out his profit.
+
+If one prefers formulae, the profit potentials of a conversion or a reversal can be stated as:
