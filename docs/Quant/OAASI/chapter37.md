@@ -143,3 +143,154 @@ The five factors influencing excess value are:
 5. changes in interest rates.
 
 In fact, to measure them one uses the "greeks": delta, vega, theta (there is no "greek" for dividend change), and rho.
+
+If implied volatility increases, the excess value portion of the option will increase and, if implied volatility decreases, so will excess value.
+
+If the call is in-the-money, then an increase in stock price will result in a decrease of excess value. That is, a deeply in-the-money option is composed primarily of intrinsic value, while excess value is quite small. However, when the call is out-of-the-money, the effect is just the opposite: Then, an increase in call price will result in an increase in excess value, because the stock price increase is bringing the stock closer to the option's striking price.
+
+The part of the delta that addresses excess value is this:
+
+- Out-of-the-money call: 100% of the delta affects the excess value.
+- In-the-money call: "1.00 minus delta" affects the excess value. (So, if a call is very deeply in-the-money and has a delta of 0.95, then the delta only has 1.00-0.95, or 0.05, room to increase. Hence it has little effect on what small amount of excess value remains in this deeply in-the-money call.)
+
+## 37.7 VOLATILITY AND THE PUT OPTION
+
+A put option tends to lose its premium fairly quickly as it becomes an in-the-money option. This is due to the realities of conversion arbitrage. In a conversion arbitrage, an arbitrageur or market-maker buys stock and buys the put, while selling the call. If he carries the position to expiration, he will have to pay carrying costs on the debit incurred to establish the position. Furthermore, he would earn any dividends that might be paid while he holds the position.
+
+In a perfect world, all option prices would be so accurate that there would be no profit available from a conversion. That is, the following equation (1) would apply:
+
+$$
+\begin{aligned}
+(1) \quad &\text{Call price}+\text{Strike price}-\text{Stock price}-\text{Put price}+\text{Dividend}-\text{Carrying cost}=0 \\
+&\text{Carriying cost}=\text{Strike price}/(1+r)^t \\
+&t=\text{time to expiration} \\
+&r=\text{interest rate}
+\end{aligned}
+$$
+
+Now, it is also known that the time value premium of a put is the amount by which its value exceeds intrinsic value. The intrinsic value of an in-the-money put option is merely the difference between the strike price and the stock price. Hence, one can write the following equation (2) for the time value premium (TVP) of an in-the-money put option:
+
+$$
+(2) \quad \text{Put TVP}=\text{Put price}-\text{Strike price}+\text{Stock price}
+$$
+
+The arbitrage equation, (1), can be rewritten as:
+
+$$
+(3) \quad \text{Put price}-\text{Strike price}+\text{Stock price}=\text{Call price}+\text{Dividends}-\text{Carrying cost}
+$$
+
+and substituting equation (2) for the terms in equation (3), one arrives at:
+
+$$
+(4) \quad \text{Put TVP}=\text{Call price}+\text{Dividends}-\text{Carrying cost}
+$$
+
+In other words, the time value premium of an in-the-money put is the same as the (out-of-the-money) call price, plus any dividends to be earned until expiration, less any carrying costs over that same time period.
+
+The time value premium of an in-the-money put disappears rather quickly.
+
+A put won't appreciate in value as much as one might expect, even when the stock drops, since the put loses its time value premium quickly.
+
+A short put is at risk of assignment as soon as there is no time value premium left in the put. Thus, a put can be assigned well in advance of expiration — even a LEAPS put!
+
+An increase in implied volatility also may increase the price of a put, but if the put is too far in-the-money, a modest increase in implied volatility still won't budge the put.
+
+## 37.8 STRADDLE OR STRANGLE BUYING AND SELLING
+
+If a straddle buyer is careful to buy straddles in situations in which implied volatility is "low," he can make money in one of two ways. Either (1) the underlying price makes a move great enough in magnitude to exceed the initial cost of the straddle, or (2) implied volatility increases quickly enough to overcome the deleterious effects of time decay.
+
+## 37.9 CALL BULL SPREADS
+
+Assumption Set 1:
+
+- Stock Price: 100
+- Time to Expiration: 4 months
+- Position: Long Call Struck at 90
+- Short Call Struck at 110
+
+If the stock remains unchanged at 100, and implied volatility increases dramatically, the price of the 90-110 call bull spread will shrink.
+
+In a call bull spread, one would subtract the vega of the call that is sold from that of the call that is bought in order to arrive at the position vega of the call bull spread.
+
+|Implied Volatility|90-110 Call Bull Spread(Theoretical Value)|Position Vega|
+|--|--|--|
+|20%|10.54|-0.67|
+|30%|9.97|-0.48|
+|40%|9.54|-0.38|
+|50%|9.18|-0.33|
+|60%|8.87|-0.30|
+|70%|8.58|-0.28|
+|80%|8.30|-0.26|
+
+Since these vegas are all negative, they indicate that the spread will shrink in value if implied volatility rises and that the spread will expand in value if implied volatility decreases.
+
+If implied volatility shrinks while the stock rises, the profit outlook will improve.
+
+If the stock drops and the implied volatility drops too, then ones losses would be worse.
+
+If this discussion had looked at bull spreads as put credit spreads instead of call debit spreads, perhaps these conclusions would not have seemed so unusual.
+
+If bull spread strategy used on a volatile stock, you won't get much expansion in the spread even if the stock makes a nice move upward in your favor. In fact, for high implied volatility situations, the bull spread won't expand out to its maximum price until expiration draws nigh.
+
+Often, the bull spread is established because the option trader feels the options are "too expensive" and thus the spread strategy is a way to cut down on the total debit invested.
+
+The bull spread and the call purchase have opposite position vegas, too. That is, a rise in implied volatility will help the call purchase but will harm the bull spread.
+
+If one wants to use the bull spread to effectively reduce the cost of buying an expensive at-the-money option, then at least make sure the striking prices are quite wide apart. That will allow for a reasonable amount of price appreciation in the bull spread if the underlying rises in price. Also, one might want to consider establishing the bull spread with striking prices that are both out-of-the-money. Then, if the stock rallies strongly, a greater percentage gain can be had by the spreader.
+
+### A FAMILIAR SCENARIO?
+
+If you really think a call option is too expensive and want to reduce its cost, try this strategy: Buy the call and simultaneously sell a credit put spread (bull spread) using slightly out-of-the-money puts.
+
+*Example*: With XYZ at 100, a trader is bullish and wants to buy the July 100 calls, which expire in two months. However, upon inspection, he finds that they are trading at 10 — an implied volatility of 59%. He knows that, historically, the implied volatility of this stock’s options range from approximately 40% to 60%, so these are very expensive options. If he buys them now and implied volatility returns to its median range near 50%, he will suffer from the decrease in implied volatility.
+
+As a possible remedy, he considers selling an out-of-the-money put credit spread at the same time that he buys the calls.
+
+Suppose the following prices exist:
+
+- XYZ: 100
+- July 100 call: 10 (as stated above)
+- July 90 put: 5
+- July 80 put: 2
+
+The entire bullish position would now consist of the following:
+
+- Buy 1 July 100 call at 10
+- Buy 1 July 80 put at 2
+- Sell 1 July 90 put at 5
+- Net expenditure: 7 point debit (plus commission)
+
+First, one can see that the bullish spread position has a total risk of 17 points, if XYZ is below 80 (the lower striking price of the put spread) at expiration. That, of course, is more than the 10-point cost of the July 100 call by itself.
+
+Note also that the bullish spread position would have a loss of 10 points (the same as the call) at a price of 87 for the common at expiration. Hence, the combined position actually has less risk than the outright call purchase as long as XYZ is 87 or higher at expiration.
+
+## 37.10 VERTICAL PUT SPREADS
+
+Assume that a stock is selling at 100, and one is going to sell a put with a 110 strike and buy a put with a 90 strike. That is a put credit (bull) spread. Also assume that the options have four months of life remaining.
+
+|Implied Volatility|90-110 Put Bull Spread (Theoretical Value)|
+|--|--|
+|20%|9.15 credit (Short option trading at parity)|
+|30%|9.70 credit|
+|40%|10.12 credit|
+|50%|10.46 credit|
+|60%|10.78 credit|
+|70%|11.05 credit|
+|80%|11.33 credit|
+
+One would not rationally sell this credit spread if implied volatility were as low as 20%, because at that low level of volatility, the in-the-money December 110 put is trading for 10 dollars — parity — and thus would immediately be at risk of early assignment.
+
+An increase in implied volatility increases the value of the spread. Now, if one had sold this spread to begin with, he would thus be losing money when implied volatility increased.
+
+The lesson to be learned is this: If one is considering using bull spreads in which at least one of the options is at- or in-the-money, then a call bull spread is a superior choice over a put bull spread.
+
+## 37.11 PUT BEAR SPREADS
+
+In a vertical put spread one buys the put with the higher strike and sells the put with the lower strike to construct a simple put bear spread. Actually, a sudden increase in implied volatility is of help to the bear put spread. That is, the spread will widen out slightly.
+
+Once again, it seems that the outright purchase of an option is probably superior to a spread.
+
+## 37.12 CALENDAR SPREADS
+
+An increase in implied volatility will cause a calendar spread to widen out. Both options will become more expensive, of course, since the increase in implied volatility affects both of them, but the absolute price change will be greatest in the long-term option.
