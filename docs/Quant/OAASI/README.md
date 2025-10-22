@@ -5,3 +5,4 @@
 * [CHAPTER 28 Mathematical Applications](chapter28.md)
 * [CHAPTER 36 The Basics of Volatility Trading](chapter36.md)
 * [CHAPTER 37 How Volatility Affects Popular Strategies](chapter37.md)
+* [CHAPTER 38 The Distribution of Stock Prices](chapter38.md)
