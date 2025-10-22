@@ -294,3 +294,66 @@ Once again, it seems that the outright purchase of an option is probably superio
 ## 37.12 CALENDAR SPREADS
 
 An increase in implied volatility will cause a calendar spread to widen out. Both options will become more expensive, of course, since the increase in implied volatility affects both of them, but the absolute price change will be greatest in the long-term option.
+
+Example: Suppose that XYZ is trading at 100. and one is interested in a calendar spread in which an August (5-month) call is bought and a May (2-month) call is sold. For the purpose of this example, it will be assumed that these are both at-the-money options. First, the vegas of the two options will be examined, assuming that implied volatility is 40%:
+
+- Stock: 100
+- Implied Volatility: 40%
+
+|Option|Theoretical Price|Vega|
+|--|--|--|
+|Sell May 100 call|6.91|0.162|
+|Buy August 100 call|11.22|0.251|
+
+In theory, this spread should he worth 4.31=11.22-6.91. It has volatility exposure (波动率暴露) of 0.089=0.251-0.162 — the difference between the vega of the long call and that of the short call. Since vega is positive, this means that an increase in implied volatility will be beneficial to the spread. In other words, one can expect the spread to widen if implied volatility rises, and can expect the spread to shrink if implied volatility declines.
+
+The following table can also be constructed, showing the theoretical value of the spread at various levels of implied volatility. This table makes the assumption that very little time has passed (only one week) before the implied volatility changes take place. It also assumes that the stock is still at 100.
+
+- Stock: 100
+- Implied Volatility: 40%
+
+|Implied Volatility|Theoretical Spread Value|
+|--|--|
+|20%|2.58|
+|30%|3.52|
+|40%|4.46|
+|50%|5.40|
+|60%|6.33|
+|80%|8.16|
+|100%|12.92|
+
+From the above data, it is quite obvious that implied volatility levels have a huge effect on the value of a calendar spread. The actual initial contribution of time decay is rather small in comparison. For example, note that if volatility remains unchanged at 40%, then the spread will have widened only slightly — to 4.46 from 4.31 — after the passage of one week's time.
+
+Consider the same stock as above, still trading at 100, but for some reason implied volatility has skyrocketed to 80%.
+
+- Stock: 100
+- Implied Volatility: 80%
+
+|Call|Theoretical Value|
+|--|--|
+|May 100 call|12.55|
+|June 100 call|16.81|
+
+There are two months of life remaining in the May options (and three months in the Junes) and the spread is trading at 4.26=16.81-12.55. However, both options are completely composed of time value premium, and most certainly the June 100 call would be worth far more than 4.26 when the May expires, if the stock is still near 100.
+
+If the stock is at 100 at May expiration, the June 100 call, with implied volatility now at 40%, and with one month of life remaining, would be worth only 4.77. Thus the spread would only have made a profit of a few cents (4.36 to 4.77), and if the underlying stock were farther from the strike price at expiration, there would probably be a loss rather than a profit.
+
+The point to be remembered is that a calendar spread is a "long volatility" play.
+
+## 37.13 RATIO SPREADS AND BACKSPREADS
+
+A call ratio spread might consist of buying an XYZ July 100 call and selling two XYZ July 120 calls. If one were to break it down into its components, this spread is really long one XYZ July 100-120 call bull spread, plus an additional naked July 120 call.
+
+We already know that an increase in implied volatility is very detrimental to a naked call option. In addition, an increase in implied volatility harms the value of an at-the-money call bull spread. So, for a ratio call spread, both components are harmed by an increase in implied volatility.
+
+A call bull spread does not widen out much if the underlying stock makes a quick upward move. This scenario also does not bode well for the ratio call spread.
+
+The same sort of thing happens with put ratio spreads. They are really the combination of a put bear spread plus some additional naked put options. If the underlying falls in price, while implied volatility increases, then the put ratio spread will fare poorly.
+
+### BACKSPREADS
+
+A call backspread is merely the opposite of a call ratio spread. Thus, An increase in implied volatility will be beneficial to a backspread strategy, while a decrease in implied volatility will be slightly harmful to the spread.
+
+## 37.14 SUMMARY
+
+Volatility and the price of the underlying are the two major components affecting profitability for most option positions. Time decay is only most pertinent as expiration approaches.
