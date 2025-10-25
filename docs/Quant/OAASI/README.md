@@ -5,6 +5,7 @@
 * [CHAPTER 4 Other Call Buying Strategies](chapter04.md)
 * [CHAPTER 5 Naked Call Writing](chapter05.md)
 * [CHAPTER 6 Ratio Call Writing](chapter06.md)
+* [CHAPTER 7 Bull Spreads Using Call Options](chapter07.md)
 * [CHAPTER 27 Arbitrage](chapter27.md)
 * [CHAPTER 28 Mathematical Applications](chapter28.md)
 * [CHAPTER 36 The Basics of Volatility Trading](chapter36.md)
