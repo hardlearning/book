@@ -2,6 +2,7 @@
 
 * [CHAPTER 1 Definitions](chapter01.md)
 * [CHAPTER 2 Covered Call Writing](chapter02.md)
+* [CHAPTER 4 Other Call Buying Strategies](chapter04.md)
 * [CHAPTER 27 Arbitrage](chapter27.md)
 * [CHAPTER 28 Mathematical Applications](chapter28.md)
 * [CHAPTER 36 The Basics of Volatility Trading](chapter36.md)
