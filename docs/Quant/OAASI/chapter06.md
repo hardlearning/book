@@ -1,6 +1,6 @@
 # CHAPTER 6 Ratio Call Writing
 
-Ratio writing is a combination of two basic types of call writing: covered call writing, in which one owns the underlying stock and sells a call; and naked call writing.
+Ratio call writing (卖出看涨期权比率) is a combination of two basic types of call writing: covered call writing, in which one owns the underlying stock and sells a call; and naked call writing.
 
 ## 6.1 THE RATIO WRITE
 
