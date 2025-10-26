@@ -1,6 +1,9 @@
 # Options as a Strategic Investment (5th edition) - Lawrence G. MacMillan
 
+## Part I BASIC PROPERTIES OF STOCK OPTIONS
 * [CHAPTER 1 Definitions](chapter01.md)
+
+## Part II CALL OPTION STRATEGIES
 * [CHAPTER 2 Covered Call Writing](chapter02.md)
 * [CHAPTER 4 Other Call Buying Strategies](chapter04.md)
 * [CHAPTER 5 Naked Call Writing](chapter05.md)
@@ -12,8 +15,15 @@
 * [CHAPTER 11 Ratio Call Spreads](chapter11.md)
 * [CHAPTER 13 Reverse Spreads](chapter13.md)
 * [CHAPTER 14 Diagonalizing a Spread](chapter14.md)
+
+## Part III PUT OPTION STRATEGIES
+* [CHAPTER 17 Put Buying in Conjunction with Common Stock Ownership](chapter17.md)
+
+## Part IV ADDITIONAL CONSIDERATIONS
 * [CHAPTER 27 Arbitrage](chapter27.md)
 * [CHAPTER 28 Mathematical Applications](chapter28.md)
+
+## Part VI MEASURING AND TRADING VOLATILITY
 * [CHAPTER 36 The Basics of Volatility Trading](chapter36.md)
 * [CHAPTER 37 How Volatility Affects Popular Strategies](chapter37.md)
 * [CHAPTER 38 The Distribution of Stock Prices](chapter38.md)
