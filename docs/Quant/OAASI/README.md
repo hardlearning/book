@@ -24,6 +24,7 @@
 * [CHAPTER 21 Synthetic Stock Positions Created by Puts and Calls](chapter21.md)
 * [CHAPTER 22 Basic Put Spreads](chapter22.md)
 * [CHAPTER 23 Spreads Combining Calls and Puts](chapter23.md)
+* [CHAPTER 24 Ratio Spreads Using Puts](chapter24.md)
 
 ## Part IV ADDITIONAL CONSIDERATIONS
 * [CHAPTER 27 Arbitrage](chapter27.md)
