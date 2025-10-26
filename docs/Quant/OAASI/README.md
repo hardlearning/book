@@ -18,6 +18,7 @@
 
 ## Part III PUT OPTION STRATEGIES
 * [CHAPTER 17 Put Buying in Conjunction with Common Stock Ownership](chapter17.md)
+* [CHAPTER 18 Buying Puts in Conjunction with Call Purchases](chapter18.md)
 
 ## Part IV ADDITIONAL CONSIDERATIONS
 * [CHAPTER 27 Arbitrage](chapter27.md)
