@@ -2,7 +2,7 @@
 
 ## 22.1 BEAR SPREAD
 
-A put hear spread is established by selling a put at a lower strike while buying a put at a higher strike.
+A put bear spread is established by selling a put at a lower strike while buying a put at a higher strike.
 
 The put bear spread is a debit spread. This is true because a put with a higher striking price will sell for more than a put with a lower striking price.
 
