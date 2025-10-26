@@ -21,6 +21,7 @@
 * [CHAPTER 18 Buying Puts in Conjunction with Call Purchases](chapter18.md)
 * [CHAPTER 19 The Sale of a Put](chapter19.md)
 * [CHAPTER 20 The Sale of a Straddle](chapter20.md)
+* [CHAPTER 21 Synthetic Stock Positions Created by Puts and Calls](chapter21.md)
 
 ## Part IV ADDITIONAL CONSIDERATIONS
 * [CHAPTER 27 Arbitrage](chapter27.md)
