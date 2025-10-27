@@ -1,4 +1,6 @@
-* [Chapter 2: The Simple Regression Model](Economics/IntroductoryEconometrics/Chapter02.md)
+# Introductory Econometrics (5th edition) - Jeffrey M. Wooldridge
+
+* [Chapter 2: The Simple Regression Model](Chapter02.md)
 * [Chapter 3: Multiple Regression Analysis: Estimation](Economics/IntroductoryEconometrics/Chapter03.md)
 * [Chapter 4. Multiple Regression Analysis: Inference](Economics/IntroductoryEconometrics/Chapter4.md)
 * [Chapter 5. Multiple Regression Analysis: OLS Asymptotics](Economics/IntroductoryEconometrics/Chapter5.md)
