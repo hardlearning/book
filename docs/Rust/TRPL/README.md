@@ -6,3 +6,4 @@
 * [3. Common Programming Concepts](chapter03.md)
 * [4. Understanding Ownership](chapter04.md)
 * [5. Using Structs to Structure Related Data](chapter05.md)
+* [6. Enums and Pattern Matching](chapter06.md)
