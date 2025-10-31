@@ -4,3 +4,4 @@
 
 * [1. Getting Started](chapter01.md)
 * [3. Common Programming Concepts](chapter03.md)
+* [4. Understanding Ownership](chapter04.md)
