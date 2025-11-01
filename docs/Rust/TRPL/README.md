@@ -8,3 +8,4 @@
 * [5. Using Structs to Structure Related Data](chapter05.md)
 * [6. Enums and Pattern Matching](chapter06.md)
 * [7. Managing Growing Projects with Packages, Crates, and Modules](chapter07.md)
+* [8. Common Collections](chapter08.md)
