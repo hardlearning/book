@@ -9,4 +9,5 @@
 * [6. Enums and Pattern Matching](chapter06.md)
 * [7. Managing Growing Projects with Packages, Crates, and Modules](chapter07.md)
 * [8. Common Collections](chapter08.md)
+* [9. Error Handling](chapter09.md)
 * [10. Generic Types, Traits, and Lifetimes](chapter10.md)
