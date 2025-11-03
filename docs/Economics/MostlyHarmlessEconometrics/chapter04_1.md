@@ -53,8 +53,8 @@ A mathematical representation of the story told by figure 4.1.1 comes from the f
 
 $$
 \begin{aligned}
-&s_i=X_i^\prime\pi_{10}+\pi_{11}Z_i+\xi_{1i} \\
-&Y_i=X_i^\prime\pi_{20}+\pi_{21}Z_i+\xi_{2i}
+&s_i=X_i^\prime\pi_{10}+\pi_{11}Z_i+\xi_{1i} \quad (4.1.4a) \\
+&Y_i=X_i^\prime\pi_{20}+\pi_{21}Z_i+\xi_{2i} \quad (4.1.4b)
 \end{aligned}
 $$
 
@@ -70,7 +70,7 @@ $$
 
 where $\tilde{z}_i$ is the residual from a regression of $Z_i$ on the exogenous covariates, $X_i$. The right-hand side of (4.1.5) therefore swaps $\tilde{z}_i$ for $Z_i$ in the IV formula, (4.1.3).
 
-The sample analog of equation (4.1.5) is an indirect least squares (ILS) estimator of $\rho$ in the causal model with covariates,
+The sample analog of equation (4.1.5) is an indirect least squares (ILS, 间接最小二乘估计值) estimator of $\rho$ in the causal model with covariates,
 
 $$
 Y_i=\alpha^\prime X_i+\rho s_i+\eta_i \quad (4.1.6)
@@ -79,3 +79,23 @@ $$
 where $\eta_i$ is the compound error term, $A_i^\prime\gamma+v_i$.
 
 ## 4.1.1 Two-Stage Least Squares
+
+In practice, of course, we almost always work with data from samples. Given a random sample, the first-stage fitted values are consistently estimated by
+
+$$
+\hat{s}_i=X_i^\prime\hat\pi_{10}+\hat\pi_{11}Z_i
+$$
+
+where $\hat\pi_{10}$ and $\hat\pi_{11}$ are OLS estimates from equation (4.1.4a).
+
+The coefficient on $\hat{s}_i$ in the regression of $Y_i$ on $X_i$ and $\hat{s}_i$ is called the two-stage least squares (2SLS, 两阶段最小二乘估计值) estimator of $\rho$. In other words, 2SLS estimates can be constructed by OLS estimation of the "second-stage equation,"
+
+$$
+Y_i=\alpha^\prime X_i+\rho\hat{s}_i+[\eta_i+\rho(s_i-\hat{s}_i)] \quad (4.1.9)
+$$
+
+This is called 2SLS because it can be done in two steps, the first estimating $\hat{s}_i$ using equation (4.1.4a) and the second estimating equation (4.1.9).
+
+2SLS is an IV estimator: the 2SLS estimate of $\rho$ in (4.1.9) is the sample analog of $\frac{Cov(Y_i,\hat{s}_i^*)}{Cov(s_i,\hat{s}_i^*)}$, where $\hat{s}_i^*$ is the residual from a regression of $\hat{s}_i$ on $X_i$.
+
+## 4.1.2 The Wald Estimator
