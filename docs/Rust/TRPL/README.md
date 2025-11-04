@@ -11,4 +11,5 @@
 * [8. Common Collections](chapter08.md)
 * [9. Error Handling](chapter09.md)
 * [10. Generic Types, Traits, and Lifetimes](chapter10.md)
+* [12. An I/O Project: Building a Command Line Program](chapter12.md)
 * [18. Object Oriented Programming Features of Rust](chapter18.md)
