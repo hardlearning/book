@@ -65,3 +65,75 @@ fn main() {
 The closure captures an immutable reference to the `self` Inventory instance and passes it with the code we specify to the `unwrap_or_else` method. Functions are not able to capture their environment in this way.
 
 ### Closure Type Inference and Annotation
+
+```rust
+let expensive_closure = |num: u32| -> u32 {
+    println!("calculating slowly...");
+    thread::sleep(Duration::from_secs(2));
+    num
+};
+```
+
+Here, we define a function that adds 1 to its parameter and a closure that has the same behavior, for comparison.
+
+```rust
+// a function definition
+fn  add_one_v1   (x: u32) -> u32 { x + 1 }
+// a fully annotated closure definition
+let add_one_v2 = |x: u32| -> u32 { x + 1 };
+// remove the type annotations from the closure definition
+let add_one_v3 = |x| { x + 1 };
+// remove the brackets because the closure body has only one expression
+let add_one_v4 = |x| x + 1;
+```
+
+### Capturing References or Moving Ownership
+
+We define a closure that captures an immutable reference to the vector named `list` because it only needs an immutable reference to print the value.
+
+```rust
+fn main() {
+    let list = vec![1, 2, 3];
+    println!("Before defining closure: {list:?}");
+
+    let only_borrows = || println!("From closure: {list:?}");
+
+    println!("Before calling closure: {list:?}");
+    only_borrows();
+    println!("After calling closure: {list:?}");
+}
+```
+
+We change the closure body so that it adds an element to the `list` vector. The closure now captures a mutable reference.
+
+```rust
+fn main() {
+    let mut list = vec![1, 2, 3];
+    println!("Before defining closure: {list:?}");
+
+    let mut borrows_mutably = || list.push(7);
+
+    borrows_mutably();
+    println!("After calling closure: {list:?}");
+}
+```
+
+Between the closure definition and the closure call, an immutable borrow to print isn't allowed because no other borrows are allowed when there's a mutable borrow.
+
+If you want to force the closure to take ownership of the values it uses in the environment even though the body of the closure doesn't strictly need ownership, you can use the `move` keyword before the parameter list.
+
+```rust
+use std::thread;
+
+fn main() {
+    let list = vec![1, 2, 3];
+    println!("Before defining closure: {list:?}");
+
+    thread::spawn(move || println!("From thread: {list:?}"))
+        .join()
+        .unwrap();
+}
+```
+
+### Moving Captured Values Out of Closures and the Fn Traits
+
