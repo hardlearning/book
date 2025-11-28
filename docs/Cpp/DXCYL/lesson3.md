@@ -123,7 +123,7 @@ int main(int argc, char *argv[]) {
         auto duration = duration_cast<milliseconds>(end - start);
         cout << "编码：" << in_data.size() << "字节数据花费" << duration.count() << "毫秒" << endl;
         // 打印输出结果
-        cout << odata << endl;
+        // cout << odata << endl;
     }
     return 0;
 }

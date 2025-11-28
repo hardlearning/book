@@ -10,3 +10,4 @@
     * [2.6 使用互斥锁+list模拟线程通信](lesson2_6.md)
 * [3 C++17多核并行计算](lesson3.md)
 * [4 线程池实现](lesson4.md)
+* [5 C++20线程特性](lesson5.md)
