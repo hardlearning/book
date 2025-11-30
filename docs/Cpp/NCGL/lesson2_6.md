@@ -1,4 +1,4 @@
-# 2.6 使用vector传递和获取内存
+# 6 使用vector传递和获取内存
 
 ```cpp
 #include <iostream>

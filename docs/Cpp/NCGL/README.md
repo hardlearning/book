@@ -8,12 +8,12 @@
 * [5 opencv灰度图做反色示例](lesson5.md)
 
 ## 第二章 C++智能指针和函数参数与返回值
-* [2.1 unique_ptr](lesson2_1.md)
-* [2.2 shared_ptr](lesson2_2.md)
-* [2.3 weak_ptr](lesson2_3.md)
-* [2.4 指针作为函数参数和返回值](lesson2_4.md)
-* [2.5 使用string传递和获取内存](lesson2_5.md)
-* [2.6 使用vector传递和获取内存](lesson2_6.md)
+* [1 unique_ptr](lesson2_1.md)
+* [2 shared_ptr](lesson2_2.md)
+* [3 weak_ptr](lesson2_3.md)
+* [4 指针作为函数参数和返回值](lesson2_4.md)
+* [5 使用string传递和获取内存](lesson2_5.md)
+* [6 使用vector传递和获取内存](lesson2_6.md)
 
 ## 第三章 分配器allocator和new重载
 

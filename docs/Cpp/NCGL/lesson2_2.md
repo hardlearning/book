@@ -1,4 +1,4 @@
-# 2.2 shared_ptr
+# 2 shared_ptr
 
 ```cpp
 #include <iostream>

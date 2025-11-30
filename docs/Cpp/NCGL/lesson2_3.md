@@ -1,6 +1,6 @@
-# 2.3 weak_ptr
+# 3 weak_ptr
 
-## shared_ptr循环引用问题
+## 3.1 shared_ptr循环引用问题
 
 ```cpp
 #include <iostream>
@@ -41,7 +41,7 @@ int main() {
 }
 ```
 
-## weak_ptr用法
+## 3.2 weak_ptr用法
 
 - use_count: 返回管理该对象的shared_ptr对象数量
 - lock: 创建管理被引用对象的shared_ptr
