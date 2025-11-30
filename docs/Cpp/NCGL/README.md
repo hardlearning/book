@@ -22,6 +22,9 @@
 * [4 construct_at对象构造和destroy对象销毁](lesson3_4.md)
 
 ## 第四章 C++指针与面向对象
+* [1 限制栈中创建对象，限制调用delete销毁对象](lesson4_1.md)
+* [2 多继承中的二义性内存分析](lesson4_2.md)
+* [3 虚函数指针](lesson4_3.md)
 
 ## 第五章 C++17内存池
 
