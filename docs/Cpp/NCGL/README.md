@@ -16,6 +16,10 @@
 * [6 使用vector传递和获取内存](lesson2_6.md)
 
 ## 第三章 分配器allocator和new重载
+* [1 重载new和delete](lesson3_1.md)
+* [2 分配器allocator](lesson3_2.md)
+* [3 未初始化内存算法uninitialized_copy](lesson3_3.md)
+* [4 construct_at对象构造和destroy对象销毁](lesson3_4.md)
 
 ## 第四章 C++指针与面向对象
 
